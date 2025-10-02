@@ -6,7 +6,7 @@ param (
 function Update-Setup {
     $setupUrl = "https://raw.githubusercontent.com/prithvirajnaik/env_builder/main/setup.ps1"
     $setupPath = "C:\Scripts\setup.ps1"
-    Invoke-WebRequest -Uri $setupUrl -OutFile $setupPath -UseBasicParsing
+    Invoke-WebRequest -Uri $setupUrl -OutFile $setupPath 
     Write-Host "Setup script updated!"
 }
 

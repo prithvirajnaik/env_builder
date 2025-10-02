@@ -2,6 +2,14 @@ param (
     [string]$tool = "all"
 )
 
+
+function Update-Setup {
+    $setupUrl = "https://raw.githubusercontent.com/<username>/<repo>/main/setup.ps1"
+    $setupPath = "$PSScriptRoot\setup.ps1"
+    Invoke-WebRequest -Uri $setupUrl -OutFile $setupPath -UseBasicParsing
+    Write-Host "Setup script updated!"
+}
+
 # -------- Step 1: Tool install functions --------
 function Install-Python {
     if (-not (Get-Command python -ErrorAction SilentlyContinue)) {
@@ -36,6 +44,7 @@ switch ($tool.ToLower()) {
     "git"    { Install-Git }
     "vscode" { Install-VSCode }
     "all"    { Install-Python; Install-Cpp; Install-Git; Install-VSCode }
+    "update" { update-setup }
     default { Write-Host "Unknown tool: $tool. Available: python, cpp, git, vscode, all" }
 }
 

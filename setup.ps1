@@ -49,5 +49,5 @@ switch ($tool.ToLower()) {
 }
 
 Write-Host "======================================="
-Write-Host "Done!"
+Write-Host "Done!!"
 Write-Host "======================================="

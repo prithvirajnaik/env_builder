@@ -27,7 +27,7 @@ if (-not (Test-Path $installDir)) {
     New-Item -ItemType Directory -Path $installDir
 }
 
-$setupUrl = "https://raw.githubusercontent.com/<username>/<repo>/main/setup.ps1"
+$setupUrl = "https://raw.githubusercontent.com/prithvirajnaik/env_builder/refs/heads/main/setup.ps1"
 $setupPath = Join-Path $installDir "setup.ps1"
 
 Write-Host "Downloading setup tool..."

@@ -44,7 +44,7 @@ switch ($tool.ToLower()) {
     "git"    { Install-Git }
     "vscode" { Install-VSCode }
     "all"    { Install-Python; Install-Cpp; Install-Git; Install-VSCode }
-    "update" { Update-setup }
+    "update" { Update-Setup }
     default { Write-Host "Unknown tool: $tool. Available: python, cpp, git, vscode, all" }
 }
 

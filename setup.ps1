@@ -1,5 +1,5 @@
 param (
-    [string]$tool = "all"
+    [string]$tool = "help"
 )
 
 
@@ -8,6 +8,10 @@ function Update-Setup {
     $setupPath = "C:\Scripts\setup.ps1"
     Invoke-WebRequest -Uri $setupUrl -OutFile $setupPath 
     Write-Host "Setup script updated"
+}
+
+function Help-Cmd {
+    Write-Host "No args passed with setup <tool>"
 }
 
 # -------- Step 1: Tool install functions --------
@@ -43,7 +47,7 @@ switch ($tool.ToLower()) {
     "cpp"    { Install-Cpp }
     "git"    { Install-Git }
     "vscode" { Install-VSCode }
-    "all"    { Install-Python; Install-Cpp; Install-Git; Install-VSCode }
+    "help"    { Help-Cmd }
     "update" { Update-Setup }
     default { Write-Host "Unknown tool: $tool. Available: python, cpp, git, vscode, all" }
 }

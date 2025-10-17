@@ -38,8 +38,9 @@ A `bootstrap.ps1` script is provided for fully automated setup. It:
 - Optionally runs `setup.ps1`
 
 Run the bootstrap script directly from PowerShell:
+```powershell
 irm https://raw.githubusercontent.com/prithvirajnaik/env_builder/main/bootstrap.ps1 | iex
-
+```
 
 ---
 
@@ -50,9 +51,15 @@ Script installation and PATH changes require administrator privileges.
 ---
 
 ### 3️⃣ Allow Script Execution (first time only)
-
+```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force
+```
 
+## ❗ Requirements
+
+* Windows 10 / 11
+* Internet connection
+* PowerShell (Admin mode recommended)
 
 
 
